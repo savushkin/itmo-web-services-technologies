@@ -2,10 +2,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>lab1-j2ee</artifactId>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>lab1-j2ee</name>
     <url>http://maven.apache.org</url>
+    <properties>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+    </properties>
     <parent>
         <groupId>me.savushkin.wst</groupId>
         <artifactId>lab1</artifactId>
@@ -13,5 +17,88 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     <dependencies>
+        <!--<dependency>
+            <groupId>org.glassfish.embedded</groupId>
+            <artifactId>maven-embedded-glassfish-plugin</artifactId>
+            <version>4.1.1</version>
+        </dependency>-->
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+            <version>3.5.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.196</version>
+        </dependency>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.glassfish</groupId>
+                <artifactId>maven-embedded-glassfish-plugin</artifactId>
+                <version>3.1.1</version>
+                <configuration>
+                    <goalPrefix>glassfish</goalPrefix>
+                    <app>${project.build.directory}/${build.finalName}.war</app>
+                    <port>8080</port>
+                    <contextRoot>${project.name}</contextRoot>
+                    <name>${project.name}</name>
+                    <autoDelete>true</autoDelete>
+                    <configFile>${project.build.outputDirectory}/config/domain.xml</configFile>
+                    <systemProperties>
+                        <property>glassfish.embedded.tmpdir=target/glassfish</property>
+                    </systemProperties>
+                </configuration>
+            </plugin>
+            <!--
+                        <plugin>
+                            <groupId>org.glassfish</groupId>
+                            <artifactId>maven-embedded-glassfish-plugin</artifactId>
+                            <version>3.0</version>
+                            <configuration>
+                                <app>${project.build.directory}/${build.finalName}.war</app>
+                                <autoDelete>true</autoDelete>
+                                <port>8080</port>
+                                &lt;!&ndash;<contextRoot>test</contextRoot>&ndash;&gt;
+                            </configuration>
+                            <executions>
+                                <execution>
+                                    <phase>package</phase>
+                                    <goals>
+                                        <goal>run</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                            <dependencies>
+                                <dependency>
+                                    <groupId>org.glassfish.main.common</groupId>
+                                    <artifactId>simple-glassfish-api</artifactId>
+                                    <version>4.1.1</version>
+                                </dependency>
+                                <dependency>
+                                    <groupId>org.glassfish.main.extras</groupId>
+                                    <artifactId>glassfish-embedded-all</artifactId>
+                                    <version>4.1.1</version>
+                                </dependency>
+                            </dependencies>
+                        </plugin>
+            -->
+        </plugins>
+    </build>
 </project>
