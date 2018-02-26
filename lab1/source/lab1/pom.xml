@@ -2,11 +2,21 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>me.savushkin.wst</groupId>
-    <artifactId>lab1-cli-client</artifactId>
-    <packaging>jar</packaging>
+    <artifactId>lab1</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>lab1-cli-client</name>
+    <name>lab1</name>
     <url>http://maven.apache.org</url>
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <modules>
+        <module>lab1-cli-client</module>
+        <module>lab1-j2ee</module>
+        <module>lab1-standalone</module>
+    </modules>
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>

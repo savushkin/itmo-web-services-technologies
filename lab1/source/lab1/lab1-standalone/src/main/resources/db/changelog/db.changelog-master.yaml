@@ -1,0 +1,567 @@
+databaseChangeLog:
+- changeSet:
+      id: 1
+      author: savushkin
+      changes:
+        - createTable:
+             tableName: music_album
+             columns:
+                - column:
+                    name: id
+                    type: BIGSERIAL
+                    autoIncrement: true
+                    constraints:
+                      primaryKey: true
+                      nullable: false
+                - column:
+                    name: title
+                    type: VARCHAR(4096)
+                    constraints:
+                      nullable: false
+                - column:
+                    name: artist
+                    type: VARCHAR(4096)
+                    constraints:
+                      nullable: false
+                - column:
+                    name: release_year
+                    type: INT
+                    constraints:
+                      nullable: false
+                - column:
+                    name: genre
+                    type: VARCHAR(4096)
+                    constraints:
+                      nullable: false
+                - column:
+                    name: track_count
+                    type: INT
+                    constraints:
+                      nullable: false
+- changeSet:
+      id: 2
+      author: savushkin
+      changes:
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "Nirvana"
+                - column:
+                   name: title
+                   value: "Nevermind"
+                - column:
+                   name: release_year
+                   value: "1991"
+                - column:
+                   name: genre
+                   value: "Rock"
+                - column:
+                   name: track_count
+                   value: "10"
+             
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "The Beach Boys"
+                - column:
+                   name: title
+                   value: "Pet Sounds"
+                - column:
+                   name: release_year
+                   value: "1966"
+                - column:
+                   name: genre
+                   value: "Rock"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "Marvin Gaye"
+                - column:
+                   name: title
+                   value: "What's Going On"
+                - column:
+                   name: release_year
+                   value: "1971"
+                - column:
+                   name: genre
+                   value: "Rock"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "Jimi Hendrix Experience"
+                - column:
+                   name: title
+                   value: "Are You Experienced?"
+                - column:
+                   name: release_year
+                   value: "1967"
+                - column:
+                   name: genre
+                   value: "Rock"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "U2"
+                - column:
+                   name: title
+                   value: "The Joshua Tree"
+                - column:
+                   name: release_year
+                   value: "1987"
+                - column:
+                   name: genre
+                   value: "Rock"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "The Beatles"
+                - column:
+                   name: title
+                   value: "Abbey Road"
+                - column:
+                   name: release_year
+                   value: "1969"
+                - column:
+                   name: genre
+                   value: "Rock"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "Fleetwood Mac"
+                - column:
+                   name: title
+                   value: "Rumours"
+                - column:
+                   name: release_year
+                   value: "1977"
+                - column:
+                   name: genre
+                   value: "Rock"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "Elvis Presley"
+                - column:
+                   name: title
+                   value: "Sun Sessions"
+                - column:
+                   name: release_year
+                   value: "1976"
+                - column:
+                   name: genre
+                   value: "Rock"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "Michael Jackson"
+                - column:
+                   name: title
+                   value: "Thriller"
+                - column:
+                   name: release_year
+                   value: "1982"
+                - column:
+                   name: genre
+                   value: "Pop"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "The Rolling Stones"
+                - column:
+                   name: title
+                   value: "Exile on Main Street"
+                - column:
+                   name: release_year
+                   value: "1972"
+                - column:
+                   name: genre
+                   value: "Rock"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "Bruce Springsteen"
+                - column:
+                   name: title
+                   value: "Born to Run"
+                - column:
+                   name: release_year
+                   value: "1975"
+                - column:
+                   name: genre
+                   value: "Rock"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "The Clash"
+                - column:
+                   name: title
+                   value: "London Calling"
+                - column:
+                   name: release_year
+                   value: "1980"
+                - column:
+                   name: genre
+                   value: "Rock"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "The Eagles"
+                - column:
+                   name: title
+                   value: "Hotel California"
+                - column:
+                   name: release_year
+                   value: "1976"
+                - column:
+                   name: genre
+                   value: "Rock"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "Led Zeppelin"
+                - column:
+                   name: title
+                   value: "Led Zeppelin"
+                - column:
+                   name: release_year
+                   value: "1969"
+                - column:
+                   name: genre
+                   value: "Rock"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "Led Zeppelin"
+                - column:
+                   name: title
+                   value: "IV"
+                - column:
+                   name: release_year
+                   value: "1971"
+                - column:
+                   name: genre
+                   value: "Rock"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "Police"
+                - column:
+                   name: title
+                   value: "Synchronicity"
+                - column:
+                   name: release_year
+                   value: "1983"
+                - column:
+                   name: genre
+                   value: "Rock"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "U2"
+                - column:
+                   name: title
+                   value: "Achtung Baby"
+                - column:
+                   name: release_year
+                   value: "1991"
+                - column:
+                   name: genre
+                   value: "Rock"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "The Rolling Stones"
+                - column:
+                   name: title
+                   value: "Let it Bleed"
+                - column:
+                   name: release_year
+                   value: "1969"
+                - column:
+                   name: genre
+                   value: "Rock"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "The Beatles"
+                - column:
+                   name: title
+                   value: "Rubber Soul"
+                - column:
+                   name: release_year
+                   value: "1965"
+                - column:
+                   name: genre
+                   value: "Rock"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "The Ramones"
+                - column:
+                   name: title
+                   value: "The Ramones"
+                - column:
+                   name: release_year
+                   value: "1976"
+                - column:
+                   name: genre
+                   value: "Rock"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "Queen"
+                - column:
+                   name: title
+                   value: "A Night At The Opera"
+                - column:
+                   name: release_year
+                   value: "1975"
+                - column:
+                   name: genre
+                   value: "Rock"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "Boston"
+                - column:
+                   name: title
+                   value: "Don't Look Back"
+                - column:
+                   name: release_year
+                   value: "1978"
+                - column:
+                   name: genre
+                   value: "Rock"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "BB King"
+                - column:
+                   name: title
+                   value: "Singin' The Blues"
+                - column:
+                   name: release_year
+                   value: "1956"
+                - column:
+                   name: genre
+                   value: "Blues"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "Albert King"
+                - column:
+                   name: title
+                   value: "Born Under A Bad Sign"
+                - column:
+                   name: release_year
+                   value: "1967"
+                - column:
+                   name: genre
+                   value: "Blues"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "Muddy Waters"
+                - column:
+                   name: title
+                   value: "Folk Singer"
+                - column:
+                   name: release_year
+                   value: "1964"
+                - column:
+                   name: genre
+                   value: "Blues"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "The Fabulous Thunderbirds"
+                - column:
+                   name: title
+                   value: "Rock With Me"
+                - column:
+                   name: release_year
+                   value: "1979"
+                - column:
+                   name: genre
+                   value: "Blues"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "Robert Johnson"
+                - column:
+                   name: title
+                   value: "King of the Delta Blues"
+                - column:
+                   name: release_year
+                   value: "1961"
+                - column:
+                   name: genre
+                   value: "Blues"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "Stevie Ray Vaughan"
+                - column:
+                   name: title
+                   value: "Texas Flood"
+                - column:
+                   name: release_year
+                   value: "1983"
+                - column:
+                   name: genre
+                   value: "Blues"
+                - column:
+                   name: track_count
+                   value: "10"
+          - insert:
+             tableName: music_album
+             columns:
+                - column:
+                   name: artist
+                   value: "Stevie Ray Vaughan"
+                - column:
+                   name: title
+                   value: "Couldn't Stand The Weather"
+                - column:
+                   name: release_year
+                   value: "1984"
+                - column:
+                   name: genre
+                   value: "Blues"
+                - column:
+                   name: track_count
+                   value: "10"

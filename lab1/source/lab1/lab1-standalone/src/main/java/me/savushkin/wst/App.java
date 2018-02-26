@@ -27,7 +27,7 @@ public class App {
             Liquibase liquibase = new liquibase.Liquibase("./db/changelog/db.changelog-master.yaml", new ClassLoaderResourceAccessor(), database);
             liquibase.update(new Contexts(), new LabelExpression());
         } catch (LiquibaseException e) {
-            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(App.class.getName()).log(Level.SEVERE, e.getMessage(), e);
             return;
         }
 

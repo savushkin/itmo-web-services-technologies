@@ -17,7 +17,7 @@ public class ConnectionUtil {
             props.load(inputStream);
             Class.forName(props.getProperty("jdbc.driver-class-name"));
         } catch (ClassNotFoundException | IOException e) {
-            Logger.getLogger(ConnectionUtil.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(ConnectionUtil.class.getName()).log(Level.SEVERE, e.getMessage(), e);
         }
     }
 
@@ -27,7 +27,7 @@ public class ConnectionUtil {
         try {
             connection = DriverManager.getConnection(props.getProperty("jdbc.url"), props);
         } catch (SQLException e) {
-            Logger.getLogger(ConnectionUtil.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(ConnectionUtil.class.getName()).log(Level.SEVERE, e.getMessage(), e);
         }
 
         return connection;
