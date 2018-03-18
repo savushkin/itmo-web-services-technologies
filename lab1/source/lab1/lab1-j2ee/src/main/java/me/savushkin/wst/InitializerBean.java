@@ -26,7 +26,7 @@ import java.util.logging.Logger;
 @TransactionManagement(TransactionManagementType.BEAN)
 public class InitializerBean {
 
-    @Resource(lookup = "jdbc/lab1")
+    @Resource(lookup = "jdbc/__default")
     private DataSource dataSource;
 
     @PostConstruct
