@@ -10,7 +10,7 @@ import java.util.logging.Logger;
  * Hello world!
  */
 public class App {
-    private static void print(List<MusicAlbum> musicAlbums) {
+    public static void print(List<MusicAlbum> musicAlbums) {
         String separator = "---------------------------------------------------------------------------------------------------------------------------";
         System.out.println(separator);
         System.out.printf("| %5s | %30s | %30s | %11s | %10s | %18s |%n",

@@ -13,10 +13,5 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     <dependencies>
-        <dependency>
-            <groupId>me.savushkin.wst.common</groupId>
-            <artifactId>common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
     </dependencies>
 </project>
