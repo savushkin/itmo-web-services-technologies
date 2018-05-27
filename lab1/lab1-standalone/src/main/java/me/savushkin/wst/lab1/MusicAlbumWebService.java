@@ -14,19 +14,19 @@ import java.util.List;
 
 @WebService(serviceName = "music-album-service")
 public class MusicAlbumWebService {
-    private Connection connection;
+    protected Connection connection;
+    protected SQLDAO sqldao;
 
     {
         try {
             connection = ConnectionUtil.getConnection();
+            sqldao = new SQLDAO(connection);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
     @WebMethod(operationName = "get-albums")
     public List<MusicAlbum> getAlbums() {
-        SQLDAO sqldao = new SQLDAO(connection);
-
         return sqldao.getMusicAlbums();
     }
 
@@ -38,8 +38,6 @@ public class MusicAlbumWebService {
             @WebParam(name = "genre") String genre,
             @WebParam(name = "trackCount") Long trackCount
     ) {
-        SQLDAO sqldao = new SQLDAO(connection);
-
         return sqldao.findMusicAlbums(new MusicAlbumFilter(
                 title,
                 artist,
