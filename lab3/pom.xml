@@ -1,0 +1,27 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>me.savushkin.wst.lab3</groupId>
+    <artifactId>lab3</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>lab3</name>
+    <url>http://maven.apache.org</url>
+    <parent>
+        <groupId>me.savushkin.wst</groupId>
+        <artifactId>itmo-web-services-technologies</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <modules>
+        <module>lab3-cli-client</module>
+        <module>lab3-standalone</module>
+    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>me.savushkin.wst.common</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+</project>
