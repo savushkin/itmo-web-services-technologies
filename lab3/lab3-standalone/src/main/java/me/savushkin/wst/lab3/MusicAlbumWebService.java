@@ -15,7 +15,7 @@ public class MusicAlbumWebService extends me.savushkin.wst.lab1.MusicAlbumWebSer
             @WebParam(name = "releaseYear") Long releaseYear,
             @WebParam(name = "genre") String genre,
             @WebParam(name = "trackCount") Long trackCount
-    ) {
+    ) throws WSTException {
         try {
             return String.valueOf(sqldao.createMusicAlbum(new MusicAlbum(
                     null,
@@ -26,7 +26,7 @@ public class MusicAlbumWebService extends me.savushkin.wst.lab1.MusicAlbumWebSer
                     trackCount
             )));
         } catch (Exception e) {
-            return e.getMessage();
+            throw new WSTException(e.getMessage(), WSTFaultException.defaultInstance());
         }
     }
 
@@ -38,7 +38,7 @@ public class MusicAlbumWebService extends me.savushkin.wst.lab1.MusicAlbumWebSer
             @WebParam(name = "releaseYear") Long releaseYear,
             @WebParam(name = "genre") String genre,
             @WebParam(name = "trackCount") Long trackCount
-    ) {
+    ) throws WSTException {
         try {
             return String.valueOf(sqldao.updateMusicAlbum(new MusicAlbum(
                     id,
@@ -49,18 +49,18 @@ public class MusicAlbumWebService extends me.savushkin.wst.lab1.MusicAlbumWebSer
                     trackCount
             )));
         } catch (Exception e) {
-            return e.getMessage();
+            throw new WSTException(e.getMessage(), WSTFaultException.defaultInstance());
         }
     }
 
     @WebMethod(operationName = "delete-album")
     public String deleteAlbum(
             @WebParam(name = "id") Long id
-    ) {
+    ) throws WSTException {
         try {
             return String.valueOf(sqldao.deleteMusicAlbum(id));
         } catch (Exception e) {
-            return e.getMessage();
+            throw new WSTException(e.getMessage(), WSTFaultException.defaultInstance());
         }
     }
 }
