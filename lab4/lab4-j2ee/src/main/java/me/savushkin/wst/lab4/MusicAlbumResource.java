@@ -1,10 +1,11 @@
 package me.savushkin.wst.lab4;
 
-import me.savushkin.wst.common.ConnectionUtil;
 import me.savushkin.wst.common.MusicAlbum;
 import me.savushkin.wst.common.MusicAlbumFilter;
 import me.savushkin.wst.common.SQLDAO;
 
+import javax.annotation.Resource;
+import javax.sql.DataSource;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.sql.Connection;
@@ -13,17 +14,21 @@ import java.util.List;
 
 @Path("/music-albums")
 public class MusicAlbumResource {
-    protected Connection connection;
     protected SQLDAO sqldao;
+
+    @Resource(lookup = "jdbc/__default")
+    private DataSource dataSource;
+
+    private Connection connection;
 
     {
         try {
-            connection = ConnectionUtil.getConnection();
-            sqldao = new SQLDAO(connection);
+            connection = dataSource.getConnection();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
