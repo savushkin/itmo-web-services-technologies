@@ -54,6 +54,7 @@ public class App {
 
         System.out.printf("Поиск по жанру \"Blues\":%n");
         response = webResource
+                .path("/finder")
                 .type(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON)
                 .post(ClientResponse.class, new MusicAlbumFilter(
@@ -68,6 +69,7 @@ public class App {
 
         System.out.printf("Поиск по году \"1969\":%n");
         response = webResource
+                .path("/finder")
                 .type(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON)
                 .post(ClientResponse.class, new MusicAlbumFilter(
@@ -82,6 +84,7 @@ public class App {
 
         System.out.printf("Поиск по году \"1969\" или жанру \"Blues\":%n");
         response = webResource
+                .path("/finder")
                 .type(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON)
                 .post(ClientResponse.class, new MusicAlbumFilter(
